@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Set script directory
+mydir=$PWD
+
 # Set up a temporary download folder and move into it
 tempFolder="~/Desktop/tempDownloads/"
 if [ -d "$tempFolder" ]
@@ -9,7 +12,7 @@ if [ -d "$tempFolder" ]
   else
     mkdir $tempFolder
     cd $tempFolder
-    echo "Created temp download folder"
+    echo "Created temp download folder and moved into it"
 fi
 
 
@@ -46,10 +49,8 @@ sudo apt install clamav clamav-daemon -y
 sudo systemctl stop clamav-freshclam && sudo freshclam && sudo systemctl start clamav-freshclam
 
 
-# TODO create cronjob to run clamscan -r ~
-
-# TODO pdfmixtool
-#sudo snap install pdfmixtool
+# Install pdfmixtool
+sudo snap install pdfmixtool
 
 # nomacs
 sudo apt install nomacs
@@ -61,6 +62,32 @@ sudo apt install nomacs
 # Install SAGA GIS
 sudo apt install saga -y
 
+# TODO otb and monteverdi
+# https://docs.qgis.org/3.22/en/docs/user_manual/processing/3rdParty.html?highlight=orfeo
+sudo apt update
+
+# Required packages to extract OTB from the archive
+sudo apt install -y --no-install-recommends file python3 python3-dev python3-numpy
+
+# Required packages to run OTB GUI tools AND recompile the Python bindings
+sudo apt install -y --no-install-recommends '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+# optional: prevent tzdata from asking the timezone during cmake installation
+export DEBIAN_FRONTEND=noninteractive
+
+# Required tools to recompile the bindings
+sudo apt install -y --no-install-recommends g++ cmake make
+
+# Download file
+wget https://www.orfeo-toolbox.org/packages/OTB-8.0.0-Linux64.run
+
+# Extract the archive
+chmod +x OTB-8.0.0-Linux64.run
+./OTB-8.0.0-Linux64.run
+
+
+
+
 # Install QGIS
 wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
 sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
@@ -70,9 +97,6 @@ sudo apt update && sudo apt install qgis qgis-plugin-grass
 
 
 # TODO QGIS plugins?
-
-# TODO otb and monteverdi
-# https://docs.qgis.org/3.22/en/docs/user_manual/processing/3rdParty.html?highlight=orfeo
 
 
 # Install VScode
@@ -92,18 +116,49 @@ if [ -f "$miniConda" ]
 bash Miniconda*.sh
 fi
 
-# TODO conda - requirements - environment
-# Throws error as "For changes to take effect, close and re-open your current shell"
-#conda update conda
-#conda env create -f environment.yml
-#echo "conda activate geo"  >> ~/.bashrc
+# conda - requirements - environment
+
+cd $mydir
+conda update conda
+conda env create -f environment.yml
+conda activate geo
+echo "conda activate geo"  >> ~/.bashrc
 
 
-# TODO Set-up code folders
+# Set-up code folders
+codeFolder="~/Code"
+if [ -d "$codeFolder" ]
+  then
+    echo "Code folder exists"
+  else
+    mkdir $codeFolder
+    echo "Code folder created"
+fi
 
 # TODO set up github
 
+# Install Docker
+# uninstall previous versions
+sudo apt remove docker docker-engine docker.io containerd runc
 
-cd ..
+# set up repository
+sudo apt update
+sudo apt install ca-certificates curl gnupg lsb-release
+
+# add GPG key and set repository
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+# install docker packages
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io -y
+
+sudo docker run hello-world
+
+
+#cd ..
 echo "Software installed"
 
