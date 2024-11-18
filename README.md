@@ -1,13 +1,24 @@
 # geo-tech-setup
-Create a lightweight linux installation for using geospatial tools
+## what is this?
+This is an attempt to create a working but relatively lightweight linux installation for use with geospatial tools i.e. something that I will be running as my daily driver for both work and personal machines.
 
+## get started with the install 
+1) download Fedora Sway:
+2) install Fedora Sway (make sure that you have sudo set up)
+3) clone this repo 
+4) run install.sh
 
-Clone the repo and then run...
-
-## Base install
+## more about the base install
 Fedora Sway - link, about
 
+# notes about this repo 
 
+# acknowledgements
+Inspired by and in places largely borrowing from the excellent work created and shared by Just a Guy Linux you tube channel and GitHub repo
 
-# Acknowledgements
-Just a Guy linux you tube channel and GitHub repo
+Learn Linux TV https://youtu.be/e7bezUA6G4g?si=yau1BEjBQhfMlJP5
+
+https://bash-prompt-generator.org
+
+https://github.com/manjaro-sway/desktop-settings/tree/sway/community/sway/etc/sway
+

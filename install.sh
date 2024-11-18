@@ -4,7 +4,7 @@
 
 # check that sway is installed
 # Check if the OS is Fedora by reading /etc/os-release
-if grep '$ID=fedora' /etc/os-release; then
+if grep '^ID=fedora' /etc/os-release; then
     echo "Operating system is Fedora."
 else
     echo "Operating system is not Fedora."
