@@ -1,0 +1,50 @@
+APPLICATIONS
+------------
+Super + Space           --- Rofi App Launcher
+Super + Return          --- Terminal
+Super + b               --- Web browser
+Super + f               --- File manager (GUI)
+Super + g               --- QGIS
+
+CORE KEY BINDINGS
+------------------
+Super + q               --- Close window
+
+Super + Shift + s       --- Lock and suspend
+Super + Shift + l       --- Lock
+Super + Shift + e       --- Logout
+Super + Shift + c       --- Restart Sway
+Super + h               --- This help file
+
+Super + Right           --- Change Focus Right
+Super + Left            --- Change Focus Left
+Super + Up              --- Change Focus Up
+Super + Down            --- Change Focus Down
+
+Super + Shift + Right   --- Move Window Right
+Super + Shift + Left    --- Move Window Left
+
+Super + Ctrl + Left     --- Resize Left 
+Super + Ctrl + Right    --- Resize Right
+Super + Ctrl + Up       --- Resize Up 
+Super + Ctrl + Down     --- Resize Down
+
+TAG/WORKSPACE BINDINGS
+----------------
+Super + (1-9,0)         --- Switch to tag (workspace 1-10)
+Super + Shift + (1-9,0) --- Move Window to tag (workspace 1-10)
+	
+LAYOUT
+-----
+Super + Shift + b       --- Split horizontally
+Super + Shift + v       --- Split vertically
+Super + Shift + f       --- fullscreen window
+
+Super + s               --- Stacking mode
+Super + w               --- Tabbed mode
+Super + e               --- Split mode
+
+Super + Shift + space   --- Toggle between tiling / floating
+
+Super + Shift + r       --- Enter resize mode
+                            Use arrow keys to resize
