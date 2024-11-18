@@ -22,11 +22,13 @@ fi
 echo "Both conditions are met: OS is Fedora and Sway is running."
 
 # backgrounds - needs to be run as admin
-exec sudo cp bg/tree.jpg /usr/share/backgrounds/tree.jpg # set as background in config. Edit that file to change bg.
-exec sudo cp bg/fern.jpg /usr/share/backgrounds/fern.jpg # unused
-exec sudo cp bg/default.png /usr/share/backgrounds/default.png # set as window manager bg. Rename any png to default.png to set. 
-exec sudo cp bg/leaves.jpg /usr/share/backgrounds/leaves.jpg # unused
-exec sudo cp bg/rain.jpg /usr/share/backgrounds/rain.jpg # unused
+sudo cp bg/tree.jpg /usr/share/backgrounds/tree.jpg # set as background in config. Edit that file to change bg.
+sudo cp bg/fern.jpg /usr/share/backgrounds/fern.jpg # unused
+sudo cp bg/default.png /usr/share/backgrounds/default.png # set as window manager bg. Rename any png to default.png to set. 
+sudo cp bg/leaves.jpg /usr/share/backgrounds/leaves.jpg # unused
+sudo cp bg/rain.jpg /usr/share/backgrounds/rain.jpg # unused
+
+echo "Background images copied"
 
 # check that config directories exist
 # if not, create them
