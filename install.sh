@@ -54,17 +54,15 @@ else
 fi
 
 # create a copy of any existing files and copy the config files from the repo into those folders
-cp "$sway_dir"/config "$sway_dir"/config.bak 
-cp "$foot_dir"/foot.ini "$foot_dir"/foot.ini.bak 
+mv "$sway_dir"/config "$sway_dir"/config.bak 
+mv "$foot_dir"/foot.ini "$foot_dir"/foot.ini.bak 
 
 cp configs/config "$sway_dir"/config
 cp configs/foot.ini "$foot_dir"/foot.ini 
+cp configs/key* "$sway_dir"
 
 #reload sway
 swaymsg reload
-
-# change .bashrc
-bash scripts/add_bashrc.sh
 
 # install base packages 
 bash scripts/01_base.sh
@@ -97,6 +95,9 @@ fi
 
 # install specific packages
 bash scripts/03_fpack.sh
+
+# change .bashrc
+bash scripts/add_bashrc.sh
 
 # install miniforge with mamba, create a geo env and install geopandas
 bash scripts/04_python.sh

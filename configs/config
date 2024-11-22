@@ -5,17 +5,20 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-#
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 # Recommends: foot
 set $term foot
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -31,7 +34,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi -show-icons
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
 output * bg /usr/share/backgrounds/tree.jpg fill
-#
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -113,19 +116,19 @@ input type:touchpad {
 #
 # Applications:
 #
-    bindsym $mod+b exec vivaldi
+    bindsym $mod+b exec flatpak run com.vivaldi.Vivaldi
     bindsym $mod+f exec thunar
-    bindsym $mod+g exec qgis
+    bindsym $mod+g exec flatpak run org.qgis.qgis
 
 
 #
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
+    #bindsym $mod+$left focus left
+    #bindsym $mod+$down focus down
+    #bindsym $mod+$up focus up
+    #bindsym $mod+$right focus right
     # Or use $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
@@ -133,10 +136,10 @@ input type:touchpad {
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
+    #bindsym $mod+Shift+$left move left
+    #bindsym $mod+Shift+$down move down
+    #bindsym $mod+Shift+$up move up
+    #bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
