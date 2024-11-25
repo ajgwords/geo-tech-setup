@@ -57,8 +57,8 @@ else
     echo "Creating environment '$ENV_NAME' with geopandas..."
     mamba create -n "$ENV_NAME" -c conda-forge geopandas -y
     echo "Environment '$ENV_NAME' created and geopandas installed."
-    echo "# Activate the '$ENV_NAME' environment on startup" >> "$bashrc_file"
-    echo "mamba activate geo" >> "$bashrc_file"
+    echo "# Activate the '$ENV_NAME' environment on startup" >> "$BASHRC_FILE"
+    echo "mamba activate geo" >> "$BASHRC_FILE"
     echo "Activation added successfully."
 fi
 
