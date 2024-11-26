@@ -13,6 +13,31 @@ Fedora Sway - link, about
 
 # notes about this repo 
 
+n.b need to change install script to copy bashrc aftermamba install
+
+## other
+If localsend doesn't accept incoming information
+https://docs.fedoraproject.org/en-US/quick-docs/firewalld/
+
+Opening a port
+Through open ports, the system is accessible from the outside, which represents a security risk. Generally, keep ports closed and only open them if they are required for certain services.
+
+Opening a port using the command line
+Get a list of allowed ports in the current zone:
+
+$ firewall-cmd --list-ports
+Add a port to the allowed ports to open it for incoming traffic:
+
+$ sudo firewall-cmd --add-port=port-number/port-type
+
+sudo firewall-cmd --add-port=53317/tcp
+
+Make the new settings persistent:
+
+$ sudo firewall-cmd --runtime-to-permanent
+The port types are either tcp, udp, sctp, or dccp. The type must match the type of network communication.
+
+
 # acknowledgements
 Inspired by and in places largely borrowing from the excellent work created and shared by Just a Guy Linux you tube channel and GitHub repo
 
