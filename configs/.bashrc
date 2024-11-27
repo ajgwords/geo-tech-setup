@@ -10,6 +10,8 @@ esac
 
 
 # Set up the prompt (PS1)
+source /usr/share/git-core/contrib/completion/git-prompt.sh 
+
 PS1='\[\e[38;5;214;1m\]\w\[\e[0m\]$(__git_ps1 " [%s]")\n\[\e[38;5;41;1m\]\u\[\e[0m\]@\[\e[38;5;33;1m\]\h\[\e[0m\] [\A]$ '
 
 
@@ -49,6 +51,8 @@ alias reload='source ~/.bashrc'
 
 # Add a welcome message (optional)
 echo "Welcome, $USER! You are in $PWD."
+fastfetch
+
 
 
 # enable color support of ls and also add handy aliases
@@ -90,3 +94,24 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/$USER/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/$USER/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/$USER/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/$USER/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/home/$USER/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/$USER/miniforge3/etc/profile.d/mamba.sh"
+fi
+
+mamba activate geo
+
+# <<< conda initialize <<<
