@@ -38,6 +38,8 @@ Is flatpak a sensible choice? I am trying to keep the system as lightweight and 
 change machine domain name if required
 
 ## other
+A. 
+
 If localsend doesn't accept incoming information then there is likely an issue with the firewall on the machine with Fedora Sway - see https://docs.fedoraproject.org/en-US/quick-docs/firewalld/
 
 It is possible to open the required port for this specific service.
@@ -47,6 +49,11 @@ It is possible to open the required port for this specific service.
 3) Make the new settings persistent: `sudo firewall-cmd --runtime-to-permanent`
 
 Note: The port types (tcp, udp, sctp, dccp) must match the type of network communication.
+
+ 
+B.
+
+If you have issues with your screen, check out the following: https://www.lorenzobettini.it/2024/09/sway-monitor-configuration-for-different-computers/
 
 
 # acknowledgements
@@ -59,3 +66,5 @@ Also thanks to:
 * Bash Prompt Generator https://bash-prompt-generator.org
 * Manjaro Sway https://github.com/manjaro-sway/desktop-settings/tree/sway/community/sway/etc/sway
 for the ideas and resources shared with the world
+
+If you are interested in how other folks do this, alternative configuration files can be found here: https://github.com/sandov/sway-configs-2023/tree/main and this is a great introduction on how to set up Sway from scratch: https://www.youtube.com/watch?v=QAmTUkzpIiM
