@@ -35,7 +35,7 @@ Some of the tings that I have altered are
 ## thoughts
 Is flatpak a sensible choice? I am trying to keep the system as lightweight and simple to administer as possible and I'm not sure if this is the best way to do that.
 
-change machine domain name if required
+Change machine domain name if required (e.g. to gary): `sudo hostnamectl set-hostname gary`, and check with `hostnamectl`
 
 ## other
 A. 
