@@ -31,6 +31,8 @@ alias la='ls -A'       # List all files, except . and ..
 alias l='ls -CF'       # Compact format list
 alias ..='cd ..'       # Easy navigation to parent directory
 
+alias ud='sudo dnf update && flatpak upgrade'
+
 # Environment variables
 export EDITOR=nano        # Set default editor to nano
 export HISTSIZE=1000      # Set the history size
