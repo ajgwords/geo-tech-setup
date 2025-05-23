@@ -119,6 +119,7 @@ input type:touchpad {
     bindsym $mod+b exec flatpak run com.vivaldi.Vivaldi
     bindsym $mod+f exec thunar
     bindsym $mod+g exec flatpak run org.qgis.qgis
+    bindsym $mod+p exec flameshot gui
 
 
 #

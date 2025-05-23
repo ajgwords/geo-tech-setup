@@ -32,6 +32,7 @@ alias l='ls -CF'       # Compact format list
 alias ..='cd ..'       # Easy navigation to parent directory
 
 alias ud='sudo dnf update && flatpak upgrade'
+alias s='flameshot gui -p ~/Pictures/Screenshots'
 
 # Environment variables
 export EDITOR=nano        # Set default editor to nano

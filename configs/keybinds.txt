@@ -5,6 +5,7 @@ Super + Return          --- Terminal
 Super + b               --- Web browser
 Super + f               --- File manager (GUI)
 Super + g               --- QGIS
+Super + p               --- Screenshot
 
 CORE KEY BINDINGS
 ------------------
